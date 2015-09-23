@@ -1,0 +1,15 @@
+@(loginForm: Form[Users])
+@import helper._
+
+@main("Login form") {
+<h1>Login form</h1>
+@helper.form(action = routes.FirstPage.WelcomePage()) {
+<fieldset>
+@helper.inputText(loginForm("userId"), '_label -> "UserId")
+@helper.inputPassword(loginForm("passWord"),'_label -> "Password")
+</fieldset>
+<br>
+<input type="submit" class="btn btn-primary" value="Login">
+<a class="btn" href="@routes.FirstPage.StartPage()">Reset</a>
+}
+}
